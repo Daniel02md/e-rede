@@ -1,0 +1,16 @@
+{
+  "name": "e-rede",
+  "version": "1.0.0",
+  "description": "api ecommerce irede.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "daniel.marcos.bezerra@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "pg": "^8.11.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.37.1"
+  }
+}

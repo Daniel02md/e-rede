@@ -26,16 +26,11 @@ class UserController extends Controller{
     }
     async login(req, res){
         const {email, password} = req.body
-        const loginResult = await this.service.check(email, password)
-        if (loginResult.error){
-            res.status(400).json({
-                message: error.message
-            })
+        const loginResult = await this.service.login(email, password)
+        if (!loginResult.success){
+            res.status(400).json(loginResult)
         } else{
-            res.status(200).json({
-                id: loginResult.id,
-                name: loginResult.name
-            })
+            res.status(200).json(loginResult)
         }
         
     }

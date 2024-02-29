@@ -1,7 +1,9 @@
 const Services = require("../Services");
 const dataSource = require('../../models')
-const {insertValidation} = require('./validations');
+const {insertValidation, loginValidation} = require('./validations');
 const { ResultServiceScope } = require("../../Utils/Scopes");
+const AuthenticationService = require("../AuthenticationService/AuthenticationService");
+
 
 class UserService extends Services{
     constructor(){
@@ -9,7 +11,30 @@ class UserService extends Services{
     }
 
     async login(email, password){
+        const checkEmail = insertValidation.emailValidation(email)
+        const checkPassword = loginValidation.passwordValidation(password)
+        const checkMatch  = await loginValidation.match(email, password)
+        if (!checkEmail.success){
 
+            return checkEmail
+
+        } else if (!checkPassword.success){
+
+            return checkPassword
+
+        } else if (!checkMatch.success){
+            
+            return checkMatch
+            
+        } else{
+            checkMatch.result = {
+                token: AuthenticationService.createToken({
+                    sub: checkMatch.result.id,
+                    email: email,
+                })
+            }
+            return checkMatch 
+        }
     }
 
     async getByEmail(email){
@@ -20,13 +45,16 @@ class UserService extends Services{
             let result = await dataSource[this.model].findAll({
                 where: {
                     email: email
-                }
+                },
+                raw: true
             })
                         
             return result.length > 0 ? result[0] : undefined
         }
     }
-0
+
+    
+
     async create (name, email, password){
         const checkName = insertValidation.nameValidation(name) 
         const checkEmail = insertValidation.emailValidation(email)

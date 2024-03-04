@@ -1,6 +1,6 @@
 const Controller = require('./Controllers')
 const {ProductService} = require('../services')
-const { ResultServiceScope } = require('../Utils/Scopes')
+const { ResultStruct } = require('../Utils/Scopes')
 
 
 const productService = new ProductService()
@@ -9,10 +9,15 @@ class ProductController extends Controller{
     constructor(){
         super(productService)
     }
-    
-    async getProductsByCategory(req, res){
+    async getAll(req, res){
+        const result = await this.service.getAll()
+        res.status(200).json(result)
+        
+    }
+    async getProductsByCategory(req, res, next){
         
         const {category} = req.query
+        if (!category){return next()}
         const productsResult = await this.service.getProductsByCategory(category)
         
         if (!productsResult.success){

@@ -1,4 +1,4 @@
-const { ResultServiceScope } = require("../../../Utils/Scopes")
+const { ResultStruct } = require("../../../utils/Scopes")
 
 async function exists(categoryName){
     const CategoryService = require('../CategoryService')
@@ -9,7 +9,7 @@ async function exists(categoryName){
             name: categoryName
         }
     })
-    return category.length > 0 ? new ResultServiceScope(true, category[0]) : new ResultServiceScope(false, 'Category not found.') 
+    return category.length > 0 ? new ResultStruct(true, category[0]) : new ResultStruct(false, 'Category not found.') 
 }
 
 

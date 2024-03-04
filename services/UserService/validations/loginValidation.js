@@ -1,11 +1,11 @@
-const { ResultServiceScope } = require("../../../Utils/Scopes")
+const { ResultStruct } = require("../../../utils/Scopes")
 
 
 function passwordValidation(password){
     if (password){
-        return new ResultServiceScope(true)
+        return new ResultStruct(true)
     } else{
-        return new ResultServiceScope(false, 'Empty password.')
+        return new ResultStruct(false, 'Empty password.')
     }
 }
 
@@ -14,9 +14,9 @@ async function match(email, password){
     const userService = new UserService()
     const user = await userService.getByEmail(email)
     if (user && user.password === password){
-        return new ResultServiceScope(true, user)
+        return new ResultStruct(true, user)
     }else {
-        return new ResultServiceScope(false, 'Wrong password or email.')
+        return new ResultStruct(false, 'Wrong password or email.')
     }
 }
 

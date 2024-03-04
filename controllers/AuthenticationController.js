@@ -1,4 +1,5 @@
 const { AuthenticationService } = require("../services");
+const jwt = require('jsonwebtoken')
 
 class AuthenticationCotroller{
     static validateToken(req, res, next){
@@ -8,6 +9,8 @@ class AuthenticationCotroller{
         if (!verificationResult.success){
             res.status(400).json(verificationResult)
         } else{
+            const userId = jwt.decode(token, {complete: true}).payload.sub
+            req.user_id = userId
             next()
         }
     }

@@ -1,16 +1,16 @@
-const { ResultServiceScope } = require("../../../Utils/Scopes")
+const { ResultStruct } = require("../../../utils/Scopes")
 
 
 function nameValidation (name){
     if (name){
         if (typeof(name) === "string"){
-           return new ResultServiceScope(true)
+           return new ResultStruct(true)
         }else{
-            return new ResultServiceScope(false,
+            return new ResultStruct(false,
              `Invalid type of name. It must be a string.`)
         }
     } else{
-        return new ResultServiceScope(false,
+        return new ResultStruct(false,
              'Invalid value of name.')
     }
 }
@@ -19,12 +19,12 @@ function emailValidation(email){
     const mailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/
     if (email){
         if (!mailRegex.test(email)){
-            return new ResultServiceScope(false, "Invalid email.")
+            return new ResultStruct(false, "Invalid email.")
         } else{
-            return new ResultServiceScope(true)
+            return new ResultStruct(true)
         }
     } else{
-        return new ResultServiceScope(true)
+        return new ResultStruct(true)
     }
     
 }
@@ -33,12 +33,12 @@ function passwordValidation(password){
 
     if (password){
         if (passwdRegex.test(password)){
-            return new ResultServiceScope(true)
+            return new ResultStruct(true)
         }else{
-            return new ResultServiceScope(false, "Password require at leat 1 Upper Letter.")
+            return new ResultStruct(false, "Password require at leat 1 Upper Letter.")
         }
     } else{
-        return new ResultServiceScope(false, 'Null password.')
+        return new ResultStruct(false, 'Null password.')
     }
 }
 
@@ -47,7 +47,7 @@ async function exists(email){
     const userService = new UserService()
     const user = await userService.getByEmail(email)
     
-    return user === undefined ? new ResultServiceScope(true) : new ResultServiceScope(false, 'Email exists.')
+    return user === undefined ? new ResultStruct(true) : new ResultStruct(false, 'Email exists.')
 }
 
 module.exports = {

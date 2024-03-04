@@ -1,11 +1,11 @@
-const { ResultServiceScope } = require("../../../Utils/Scopes")
+const { ResultStruct } = require("../../../utils/Scopes")
 
 function tokenValidation(token){
     const genericTokenRegex = /eyJ[A-Za-z0-9-_]+\.eyJ[A-Za-z0-9-_]+\.[A-Za-z0-9-_.+/]*/
     if (token && genericTokenRegex.test(token)){
-        return new ResultServiceScope(true)
+        return new ResultStruct(true)
     }else{
-        return new ResultServiceScope(false, 'Permission denied. Invalid Token.')
+        return new ResultStruct(false, 'Permission denied. Invalid Token.')
     }
 }
 

@@ -1,5 +1,5 @@
-const ResultServiceScope  = require('./ResultServiceScope')
+const ResultStruct  = require('./ResultStruct')
 
 module.exports = {
-    ResultServiceScope
+    ResultStruct
 }

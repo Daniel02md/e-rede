@@ -1,7 +1,7 @@
 const Services = require("../Services");
 const dataSource = require('../../models')
 const {insertValidation, loginValidation} = require('./validations');
-const { ResultServiceScope } = require("../../Utils/Scopes");
+const { ResultStruct } = require("../../utils/Scopes");
 const AuthenticationService = require("../AuthenticationService/AuthenticationService");
 
 
@@ -87,7 +87,7 @@ class UserService extends Services{
                     raw: true,
                 }
             )
-            return new ResultServiceScope(true, queryResult)
+            return new ResultStruct(true, queryResult)
         }
     }
 

@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken')
 const { verifyValidation } = require('./validation')
-const { ResultServiceScope } = require('../../Utils/Scopes')
+const { ResultStruct } = require('../../utils/Scopes')
 
 class AuthenticationService{
     static options = {
@@ -19,9 +19,9 @@ class AuthenticationService{
         } else {
             try {
                 jwt.verify(token, process.env.SECRET_KEY)
-                return new ResultServiceScope(true)
+                return new ResultStruct(true)
             }catch{
-                return new ResultServiceScope(false, 'Permission Denied. Invalid token.')
+                return new ResultStruct(false, 'Permission Denied. Invalid token.')
             }
             
         }

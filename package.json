@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "dotenvx run --env-file=\"./env/.env\" -- nodemon app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "dotenvx run --env-file=\"./env/.env\" -- node main.js"
   },
   "author": "daniel.marcos.bezerra@gmail.com",
   "license": "ISC",

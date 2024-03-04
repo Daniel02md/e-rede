@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     }
   }
   Sale.init({
-    date: DataTypes.DATE
+    date: DataTypes.DATEONLY
   }, {
     sequelize,
     modelName: 'Sale',

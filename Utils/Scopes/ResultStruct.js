@@ -1,5 +1,5 @@
 
-class ResultServiceScope{
+class ResultStruct{
     constructor(success, content){
         if (success){
             this.success = success
@@ -11,4 +11,4 @@ class ResultServiceScope{
     }
 }
 
-module.exports = ResultServiceScope
+module.exports = ResultStruct

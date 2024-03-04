@@ -1,7 +1,7 @@
 const Services = require('../Services')
 const dataSource = require('../../models')
 const {readValidation} = require('./validations')
-const { ResultServiceScope } = require('../../Utils/Scopes')
+const { ResultStruct } = require('../../utils/Scopes')
 
 class CategoryService extends Services{
     constructor(){
@@ -26,7 +26,7 @@ class CategoryService extends Services{
                 return result
             })
            
-            return new ResultServiceScope(true, products)
+            return new ResultStruct(true, products)
         }
         
     }

@@ -2,10 +2,10 @@ const { AuthenticationService } = require("../services");
 const jwt = require('jsonwebtoken')
 
 class AuthenticationCotroller{
-    static validateToken(req, res, next){
+    static async validateToken(req, res, next){
         
         const token = req.header('Authorization')
-        const verificationResult = AuthenticationService.validateToken(token)
+        const verificationResult = await AuthenticationService.validateToken(token)
         if (!verificationResult.success){
             res.status(400).json(verificationResult)
         } else{

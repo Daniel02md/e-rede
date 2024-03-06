@@ -10,16 +10,19 @@ module.exports = (sequelize, DataTypes) => {
         foreignKey: 'user_id'
       })
       ItemSale.belongsTo(models.Product, {
-        foreignKey: 'product_id'
+        foreignKey: 'product_id',
+        as: 'product'
       })
       ItemSale.belongsTo(models.Sale, {
-        foreignKey: 'sale_id'
+        foreignKey: 'sale_id',
+        as: 'sale'
       })
     }
   }
   ItemSale.init({
     user_id: DataTypes.INTEGER,
     product_id: DataTypes.INTEGER,
+    amount: DataTypes.INTEGER,
     sale_id: DataTypes.INTEGER
     
   }, {

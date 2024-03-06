@@ -12,6 +12,12 @@ router.post(
     
 )
 
+router.get(
+    '/sale',
+    AuthenticationCotroller.validateToken,
+    (req, res) => saleController.getOrders(req, res)
+)
+
 
 
 module.exports = router

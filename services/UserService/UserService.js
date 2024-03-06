@@ -1,5 +1,6 @@
 const Services = require("../Services");
 const dataSource = require('../../models')
+const { User, Product, Sale, Category} = require('../../models')
 const {insertValidation, loginValidation} = require('./validations');
 const { ResultStruct } = require("../../utils/Scopes");
 const AuthenticationService = require("../AuthenticationService/AuthenticationService");
@@ -53,7 +54,34 @@ class UserService extends Services{
         }
     }
 
-    
+    async getOrdersByUser(userId){
+        const user = await this.getById(userId)
+        const itemSales = await user.getItemSales({
+            raw: true,
+            nest: true,
+            attributes: {
+                exclude: ['user_id', 'product_id', 'sale_id']
+            },
+            include: [
+                { model: Product,
+                    as: 'product',
+                    nest: true,
+                    include: [
+                        {model: Category, as: 'category'}
+                    ],
+                    attributes: {
+                        exclude: ['category_id']
+                    }
+                },
+                { model: Sale, as: 'sale', attributes: {
+                    exclude: ['id']
+                }}
+            ]
+
+        })
+        
+        return itemSales
+    }
 
     async create (name, email, password){
         const checkName = insertValidation.nameValidation(name) 

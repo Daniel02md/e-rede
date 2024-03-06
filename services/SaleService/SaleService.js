@@ -1,6 +1,7 @@
 const Services = require('../Services')
 const { ResultStruct } = require('../../utils/Scopes')
 const ItemSaleService = require('../ItemSaleService/ItemSaleService')
+const UserService = require('../UserService/UserService')
 const {
     orderValidation
 } = require('./validations')
@@ -8,6 +9,11 @@ const {
 class SaleService extends Services {
     constructor() {
         super('Sale')
+    }
+    async getOrdersByUser(userId){
+        const userService = new UserService()
+        const orders = await userService.getOrdersByUser(userId)
+        return new ResultStruct(true, orders)
     }
 
     async order(products, userId) {
@@ -33,6 +39,7 @@ class SaleService extends Services {
                     orders.push({
                         user_id: userId,
                         product_id: product.id,
+                        amount: products.find(element => element.id===product.id).amount,
                         sale_id: sale.id
                     })
                 }

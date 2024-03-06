@@ -6,51 +6,23 @@ module.exports = {
     await queryInterface.bulkInsert('categories', [
       {
         "id": 1,
-        "name": "camisetas"
+        "name": "camisetas",
+        "image": "camisetas.png"
       },
       {
         "id": 2,
-        "name": "calcas"
-      },
-      {
-        "id": 3,
-        "name": "vestidos"
-      },
-      {
-        "id": 4,
-        "name": "jaquetas"
+        "name": "calcas",
+        "image": "calcas.png"
       },
       {
         "id": 5,
-        "name": "sapatos"
+        "name": "sapatos",
+        "image": "sapatos.png"
       },
       {
         "id": 6,
-        "name": "acessorios"
-      },
-      {
-        "id": 7,
-        "name": "saias"
-      },
-      {
-        "id": 8,
-        "name": "roupas esportivas"
-      },
-      {
-        "id": 9,
-        "name": "casacos de inverno"
-      },
-      {
-        "id": 10,
-        "name": "moda praia"
-      },
-      {
-        "id": 11,
-        "name": "roupas infantis"
-      },
-      {
-        "id": 12,
-        "name": "Bolsas"
+        "name": "acessorios",
+        "image": "acessorios.png"
       }
     ])
   },

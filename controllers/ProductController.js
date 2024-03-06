@@ -1,6 +1,6 @@
 const Controller = require('./Controllers')
 const {ProductService} = require('../services')
-const { ResultStruct } = require('../Utils/Scopes')
+const { ResultStruct } = require('../utils/Scopes')
 
 
 const productService = new ProductService()

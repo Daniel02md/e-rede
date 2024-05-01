@@ -6,6 +6,7 @@ module.exports = {
     await queryInterface.bulkInsert('products',
     [
       {
+        "id": 25,
         "image": "url_acessorio_1",
         "name": "Bolsa de Ombro Fashion",
         "category_id": 6,
@@ -14,6 +15,7 @@ module.exports = {
         "stock": 70
       },
       {
+        "id": 26,
         "image": "url_acessorio_2",
         "name": "Óculos de Sol Estiloso",
         "category_id": 6,
@@ -22,6 +24,7 @@ module.exports = {
         "stock": 90
       },
       {
+        "id": 27,
         "image": "url_acessorio_3",
         "name": "Chapéu Panamá Clássico",
         "category_id": 6,
@@ -30,6 +33,7 @@ module.exports = {
         "stock": 60
       },
       {
+        "id": 28,
         "image": "url_acessorio_4",
         "name": "Relógio de Pulso Moderno",
         "category_id": 6,
@@ -38,6 +42,7 @@ module.exports = {
         "stock": 50
       },
       {
+        "id": 29,
         "image": "url_acessorio_5",
         "name": "Cinto de Couro Reversível",
         "category_id": 6,
@@ -46,6 +51,7 @@ module.exports = {
         "stock": 100
       },
       {
+        "id": 30,
         "image": "url_acessorio_6",
         "name": "Colar de Prata com Pingente",
         "category_id": 6,
@@ -54,6 +60,7 @@ module.exports = {
         "stock": 80
       },
       {
+        "id": 31,
         "image": "url_acessorio_7",
         "name": "Bijuteria Brincos Dourados",
         "category_id": 6,
@@ -62,6 +69,7 @@ module.exports = {
         "stock": 120
       },
       {
+        "id": 32,
         "image": "url_acessorio_8",
         "name": "Lenço Estampado",
         "category_id": 6,

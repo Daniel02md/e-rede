@@ -6,6 +6,7 @@ module.exports = {
     await queryInterface.bulkInsert( 'products',
       [
         {
+          "id": 1,
           "image": "url_camiseta_1",
           "name": "Camiseta Casual Algodão",
           "category_id": 1,
@@ -14,6 +15,7 @@ module.exports = {
           "stock": 100
         },
         {
+          "id": 2,
           "image": "url_camiseta_2",
           "name": "Camiseta Estampada Vintage",
           "category_id": 1,
@@ -22,6 +24,7 @@ module.exports = {
           "stock": 80
         },
         {
+          "id": 3,
           "image": "url_camiseta_3",
           "name": "Camiseta Manga Longa Listrada",
           "category_id": 1,
@@ -30,6 +33,7 @@ module.exports = {
           "stock": 60
         },
         {
+          "id": 4,
           "image": "url_camiseta_4",
           "name": "Regata Esportiva DryFit",
           "category_id": 1,
@@ -38,6 +42,7 @@ module.exports = {
           "stock": 50
         },
         {
+          "id": 5,
           "image": "url_camiseta_5",
           "name": "Camiseta Polo Clássica",
           "category_id": 1,
@@ -46,6 +51,7 @@ module.exports = {
           "stock": 40
         },
         {
+          "id": 6,
           "image": "url_camiseta_6",
           "name": "Camiseta Estampada Arte Urbana",
           "category_id": 1,
@@ -54,6 +60,7 @@ module.exports = {
           "stock": 70
         },
         {
+          "id": 7,
           "image": "url_camiseta_7",
           "name": "Camiseta Manga Raglan",
           "category_id": 1,
@@ -62,6 +69,7 @@ module.exports = {
           "stock": 90
         },
         {
+          "id": 8,
           "image": "url_camiseta_8",
           "name": "Camiseta Básica Algodão Orgânico",
           "category_id": 1,

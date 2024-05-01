@@ -6,6 +6,7 @@ module.exports = {
     await queryInterface.bulkInsert('products',
     [
       {
+        "id": 17,
         "image": "url_sapato_1",
         "name": "Sapato Social de Couro",
         "category_id": 5,
@@ -14,6 +15,7 @@ module.exports = {
         "stock": 40
       },
       {
+        "id": 18,
         "image": "url_sapato_2",
         "name": "Tênis Esportivo Leve",
         "category_id": 5,
@@ -22,6 +24,7 @@ module.exports = {
         "stock": 30
       },
       {
+        "id": 19,
         "image": "url_sapato_3",
         "name": "Bota de Couro com Cadarço",
         "category_id": 5,
@@ -30,6 +33,7 @@ module.exports = {
         "stock": 50
       },
       {
+        "id": 20,
         "image": "url_sapato_4",
         "name": "Sapatilha Elegante",
         "category_id": 5,
@@ -38,6 +42,7 @@ module.exports = {
         "stock": 60
       },
       {
+        "id": 21,
         "image": "url_sapato_5",
         "name": "Chinelo Slide Confortável",
         "category_id": 5,
@@ -46,6 +51,7 @@ module.exports = {
         "stock": 70
       },
       {
+        "id": 22,
         "image": "url_sapato_6",
         "name": "Sandália Plataforma Verão",
         "category_id": 5,
@@ -54,6 +60,7 @@ module.exports = {
         "stock": 80
       },
       {
+        "id": 23,
         "image": "url_sapato_7",
         "name": "Mocassim Casual",
         "category_id": 5,
@@ -62,6 +69,7 @@ module.exports = {
         "stock": 90
       },
       {
+        "id": 24,
         "image": "url_sapato_8",
         "name": "Alpargata Estampada",
         "category_id": 5,

@@ -6,6 +6,7 @@ module.exports = {
     await queryInterface.bulkInsert('products', 
     [
       {
+        "id": 9,
         "image": "url_calca_1",
         "name": "Calça Jeans Slim Fit",
         "category_id": 2,
@@ -14,6 +15,7 @@ module.exports = {
         "stock": 80
       },
       {
+        "id": 10,
         "image": "url_calca_2",
         "name": "Calça Chino Clássica",
         "category_id": 2,
@@ -22,6 +24,7 @@ module.exports = {
         "stock": 70
       },
       {
+        "id": 11,
         "image": "url_calca_3",
         "name": "Calça Jogger Sarja",
         "category_id": 2,
@@ -30,6 +33,7 @@ module.exports = {
         "stock": 90
       },
       {
+        "id": 12,
         "image": "url_calca_4",
         "name": "Calça Social Slim",
         "category_id": 2,
@@ -38,6 +42,7 @@ module.exports = {
         "stock": 60
       },
       {
+        "id": 13,
         "image": "url_calca_5",
         "name": "Calça Cargo Outdoor",
         "category_id": 2,
@@ -46,6 +51,7 @@ module.exports = {
         "stock": 50
       },
       {
+        "id": 14,
         "image": "url_calca_6",
         "name": "Calça Legging Fitness",
         "category_id": 2,
@@ -54,6 +60,7 @@ module.exports = {
         "stock": 40
       },
       {
+        "id": 15,
         "image": "url_calca_7",
         "name": "Calça Linho Verão",
         "category_id": 2,
@@ -62,6 +69,7 @@ module.exports = {
         "stock": 120
       },
       {
+        "id": 16,
         "image": "url_calca_8",
         "name": "Calça Moletom Jogger",
         "category_id": 2,
